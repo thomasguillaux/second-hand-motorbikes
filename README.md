@@ -5,8 +5,6 @@ This project uses Husky and commitlint to ensure that all commit messages adhere
 Commit Message Format
 Commit messages should follow the Conventional Commits standard, which has the following format:
 
-php
-Copy code
 <type>(optional scope): <description>
 <type>: This represents the type of change being made. It should be one of the following:
 
