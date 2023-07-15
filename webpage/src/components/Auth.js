@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { auth } from './firebase';
+import { auth } from '../services/firebase';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
@@ -33,14 +33,13 @@ const Auth = () => {
       });
   };
 
-  const logOut = () => {
-    auth.signOut()
-      .then(() => {
-        console.log('User signed out');
-      })
-      .catch((error) => {
-        console.error('Error signing out:', error);
-      });
+  const logOut = async () => {
+    try {
+      await auth.signOut();
+      console.log('User signed out');
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
   };
 
   return (
