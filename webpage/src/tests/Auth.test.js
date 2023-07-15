@@ -3,13 +3,6 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Auth from '../components/Auth';
 import { auth } from '../../src/services/firebase';
-import firebase from 'firebase/compat/app';
-
-// Mock the firebase object
-jest.mock('firebase/compat/app', () => ({
-  auth: jest.fn(),
-  GoogleAuthProvider: jest.fn(() => ({})),
-}));
 
 // Mock the auth module and its methods
 jest.mock('../../src/services/firebase', () => ({
